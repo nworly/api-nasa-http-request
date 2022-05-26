@@ -12,9 +12,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import java.util.List;
 
 public class App {
 
@@ -43,7 +41,7 @@ public class App {
         CloseableHttpResponse response1 = httpClient.execute(requestForNasaUrl);
 
         byte[] bytes = response1.getEntity().getContent().readAllBytes();
-        
+
         String fileName = new File(nasaResponse.getUrl()).getName();
 
         try (FileOutputStream fos = new FileOutputStream(fileName)) {
